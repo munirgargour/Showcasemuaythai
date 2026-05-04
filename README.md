@@ -33,7 +33,7 @@ To view or edit the site locally:
 ## Presented By
 
 **Campanella Martial Arts**
-[campenellamartialarts.com](https://www.campenellamartialarts.com)
+[campanellamartialarts.com](https://www.campanellamartialarts.com)
 
 ---
 
