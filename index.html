@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Showcase Muay Thai — Connecticut</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Teko:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:  #050505;
-      --dark:   #0e0e0e;
-      --card:   #141414;
-      --ink:    #1a1a1a;
-      --red:    #D90429;
-      --red2:   #ff1a36;
-      --gold:   #EAA900;
-      --white:  #EEE8E0;
-      --ash:    #888;
-      --muted:  #444;
-      --line:   rgba(255,255,255,.07);
+      --black:     #000000;
+      --off-black: #080808;
+      --dark:      #0f0f0f;
+      --card:      #111111;
+      --ink:       #1a1a1a;
+      --white:     #FFFFFF;
+      --off-white: #F0EDE8;
+      --cream:     #D8D0C4;
+      --grey:      #666;
+      --mid:       #333;
+      --line:      rgba(255,255,255,.1);
+      --line-s:    rgba(255,255,255,.06);
     }
 
     html { scroll-behavior: smooth; }
@@ -35,317 +36,249 @@
     body::after {
       content: '';
       position: fixed; inset: 0; pointer-events: none; z-index: 9000;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      opacity: .032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: .04;
     }
 
-    /* NAV */
+    /* ═══════════ NAV ═══════════ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 800;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 2.5rem;
-      background: rgba(5,5,5,.92);
+      padding: 1rem 2.5rem;
+      background: rgba(0,0,0,.95);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
-    .logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
-    .logo-main { font-family: 'Black Han Sans', sans-serif; font-size: 1.35rem; letter-spacing: .08em; color: var(--white); }
-    .logo-main span { color: var(--red); }
-    .logo-sub { font-family: 'Teko', sans-serif; font-size: .68rem; font-weight: 300; letter-spacing: .45em; text-transform: uppercase; color: var(--ash); }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-    .nav-links a { font-family: 'Teko', sans-serif; font-size: .95rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--ash); text-decoration: none; transition: color .2s; }
+    .nav-logo { display: flex; align-items: center; gap: 1rem; }
+    .nav-logo img { width: 46px; height: 46px; object-fit: contain; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-top { font-family: 'Cinzel', sans-serif; font-size: .92rem; font-weight: 700; letter-spacing: .18em; color: var(--white); }
+    .nav-logo-bot { font-family: 'Barlow Condensed', sans-serif; font-size: .62rem; font-weight: 300; letter-spacing: .45em; text-transform: uppercase; color: var(--grey); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color .2s; cursor: pointer; }
     .nav-links a:hover { color: var(--white); }
-    .nav-right { display: flex; gap: .8rem; align-items: center; }
-    .nav-btn { font-family: 'Teko', sans-serif; font-size: .9rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; padding: .5rem 1.4rem; transition: background .2s, color .2s, border-color .2s; }
-    .nav-btn.ghost { color: var(--ash); border: 1px solid var(--muted); }
-    .nav-btn.ghost:hover { color: var(--gold); border-color: var(--gold); }
-    .nav-btn.solid { background: var(--red); color: var(--white); clip-path: polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%); }
-    .nav-btn.solid:hover { background: var(--red2); }
+    .nav-tag { font-family: 'Barlow Condensed', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--mid); border: 1px solid var(--mid); padding: .4rem 1rem; }
 
-    /* HERO */
+    /* ═══════════ HERO ═══════════ */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
-      padding: 8rem 2.5rem 5rem; text-align: center;
+      padding: 7rem 2rem 5rem; text-align: center;
     }
-    .hbg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 65% 55% at 50% 45%, rgba(217,4,41,.18) 0%, transparent 65%),
-        radial-gradient(ellipse 100% 40% at 50% 100%, rgba(0,0,0,.9) 0%, transparent 100%),
-        var(--black);
+    .hero-rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.05); }
+    .ring-1 { width: min(900px, 130vw); height: min(900px, 130vw); }
+    .ring-2 { width: min(700px, 100vw); height: min(700px, 100vw); border-color: rgba(255,255,255,.04); }
+    .ring-3 { width: min(500px, 75vw); height: min(500px, 75vw); border-color: rgba(255,255,255,.06); }
+    .ring-4 { width: min(300px, 50vw); height: min(300px, 50vw); border-color: rgba(255,255,255,.08); }
+    .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 35%, var(--black) 100%); }
+
+    .hero-content { position: relative; z-index: 2; max-width: 820px; }
+
+    .hero-logo-wrap {
+      margin: 0 auto 2.6rem;
+      width: clamp(160px, 26vw, 300px); height: clamp(160px, 26vw, 300px);
+      position: relative;
+      opacity: 0; animation: fadeScale .9s .1s cubic-bezier(.22,1,.36,1) forwards;
     }
-    .hmesh {
-      position: absolute; inset: -50%; width: 200%; height: 200%;
-      background-image: linear-gradient(rgba(217,4,41,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(217,4,41,.06) 1px, transparent 1px);
-      background-size: 60px 60px;
-      transform-origin: center;
-      animation: meshDrift 25s linear infinite;
+    .hero-logo-wrap img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 40px rgba(255,255,255,.07)); }
+    .hero-logo-wrap::after { content: ''; position: absolute; inset: -10px; border-radius: 50%; border: 1px solid rgba(255,255,255,.06); animation: ringPulse 3s ease-in-out infinite; }
+    @keyframes ringPulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.04);opacity:.3;} }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .7rem; font-weight: 500; letter-spacing: .6em;
+      text-transform: uppercase; color: var(--grey);
+      margin-bottom: 1rem;
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      opacity: 0; animation: fadeUp .6s .45s forwards;
     }
-    @keyframes meshDrift {
-      0%   { transform: perspective(600px) rotateX(20deg) translateY(0); }
-      100% { transform: perspective(600px) rotateX(20deg) translateY(60px); }
+    .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--mid); }
+
+    .hero-title {
+      font-family: 'Cinzel', sans-serif;
+      font-size: clamp(2.2rem, 7.5vw, 6.5rem);
+      font-weight: 900; letter-spacing: .1em; line-height: .95;
+      opacity: 0; animation: fadeUp .7s .57s forwards;
     }
-    .hmask { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, var(--black) 100%); }
-    .hero-ghost {
-      position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%);
-      text-align: center; padding-left: .04em; /* offset for letter-spacing */
-      font-family: 'Black Han Sans', sans-serif; font-size: clamp(8rem, 22vw, 20rem);
-      white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(217,4,41,.1);
-      user-select: none; pointer-events: none; letter-spacing: .04em;
+    .hero-title .line2 { display: block; font-size: clamp(1.4rem, 4.5vw, 4rem); font-weight: 400; letter-spacing: .28em; color: var(--cream); margin-top: .35rem; }
+
+    .divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 2rem auto;
+      max-width: 300px;
+      opacity: 0; animation: fadeUp .6s .68s forwards;
     }
-    .hero-content { position: relative; z-index: 2; max-width: 860px; margin-top: 4rem; }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: .8rem;
-      font-family: 'Teko', sans-serif; font-size: .78rem; font-weight: 400; letter-spacing: .55em;
-      text-transform: uppercase; color: var(--ash); margin-bottom: 1.8rem;
-      opacity: 0; animation: up .5s .1s forwards;
+    .divider-line { flex: 1; height: 1px; background: var(--mid); }
+    .divider-diamond { width: 7px; height: 7px; background: var(--white); transform: rotate(45deg); flex-shrink: 0; }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(.82rem, 1.8vw, 1rem); font-weight: 300; letter-spacing: .5em;
+      text-transform: uppercase; color: var(--grey);
+      opacity: 0; animation: fadeUp .6s .78s forwards;
     }
-    .hero-tag::before, .hero-tag::after { content: ''; display: block; width: 2rem; height: 1px; background: var(--muted); }
-    .hero-h1 {
-      font-family: 'Black Han Sans', sans-serif;
-      font-size: clamp(4.5rem, 16vw, 14rem); line-height: .88; letter-spacing: .04em;
-      opacity: 0; animation: up .6s .22s forwards; padding-left: .04em;
-    }
-    .hero-h1 .r { color: var(--red); }
-    .hero-deck {
-      font-family: 'Teko', sans-serif; font-size: clamp(1rem, 2.5vw, 1.4rem);
-      font-weight: 300; letter-spacing: .3em; text-transform: uppercase; color: var(--ash);
-      margin: 1.6rem 0 3rem; opacity: 0; animation: up .6s .38s forwards;
-    }
-    .hero-cta {
-      display: flex; gap: 1.5px; justify-content: center;
-      opacity: 0; animation: up .6s .52s forwards; max-width: 680px; margin: 0 auto;
-    }
-    .cta-half {
-      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 2.2rem 2rem; text-decoration: none; position: relative; overflow: hidden;
-      transition: transform .2s;
-    }
-    .cta-half:hover { transform: translateY(-3px); }
-    .cta-half.fans { background: var(--red); clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%); }
-    .cta-half.fighters { background: var(--card); border: 1px solid var(--line); clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%); }
-    .cta-half.fighters:hover { border-color: var(--gold); }
-    .cta-eyebrow { font-family: 'Teko', sans-serif; font-size: .68rem; font-weight: 400; letter-spacing: .45em; text-transform: uppercase; margin-bottom: .4rem; }
-    .cta-half.fans .cta-eyebrow { color: rgba(255,255,255,.6); }
-    .cta-half.fighters .cta-eyebrow { color: var(--ash); }
-    .cta-label { font-family: 'Black Han Sans', sans-serif; font-size: 1.6rem; letter-spacing: .06em; }
-    .cta-half.fans .cta-label { color: var(--white); }
-    .cta-half.fighters .cta-label { color: var(--gold); }
-    .cta-sub { font-size: .8rem; font-weight: 300; margin-top: .4rem; }
-    .cta-half.fans .cta-sub { color: rgba(255,255,255,.65); }
-    .cta-half.fighters .cta-sub { color: var(--ash); }
+
     .hero-coming {
-      margin-top: 2.5rem; display: inline-flex; align-items: center; gap: .7rem;
-      font-family: 'Teko', sans-serif; font-size: .78rem; letter-spacing: .4em;
-      text-transform: uppercase; color: var(--muted);
-      opacity: 0; animation: up .6s .66s forwards;
+      margin-top: 2.8rem; display: inline-flex; align-items: center; gap: .8rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .7rem; letter-spacing: .45em; text-transform: uppercase; color: var(--mid);
+      opacity: 0; animation: fadeUp .6s .92s forwards;
     }
-    .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: pulseDot 1.8s ease-in-out infinite; }
-    @keyframes pulseDot { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.6); opacity: .5; } }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--white); animation: blink 2.2s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.15;} }
 
-    /* TICKER */
-    .ticker { background: var(--red); overflow: hidden; white-space: nowrap; padding: .65rem 0; }
-    .ticker-inner { display: inline-block; animation: tick 28s linear infinite; }
-    .ticker-inner span { font-family: 'Teko', sans-serif; font-size: .85rem; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; padding: 0 2rem; color: rgba(255,255,255,.88); }
-    .ticker-inner .sep { color: rgba(255,255,255,.3); padding: 0 .5rem; }
-    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    /* ═══════════ TICKER ═══════════ */
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; white-space: nowrap; padding: .72rem 0; background: var(--off-black); }
+    .ticker-track { display: inline-block; animation: tick 34s linear infinite; }
+    .ticker-track span { font-family: 'Barlow Condensed', sans-serif; font-size: .76rem; font-weight: 500; letter-spacing: .35em; text-transform: uppercase; padding: 0 2.2rem; color: var(--grey); }
+    .ticker-track .dia { color: var(--mid); font-size: .45rem; vertical-align: middle; padding: 0 .8rem; }
+    @keyframes tick { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
-    /* SHARED */
+    /* ═══════════ SHARED ═══════════ */
     section { padding: 7rem 2.5rem; }
-    .eyebrow { font-family: 'Teko', sans-serif; font-size: .75rem; font-weight: 400; letter-spacing: .5em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
-    .stitle { font-family: 'Black Han Sans', sans-serif; font-size: clamp(2.6rem, 6vw, 5.5rem); line-height: .9; letter-spacing: .04em; margin-bottom: 1.4rem; }
-    .sbody { font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--ash); max-width: 540px; }
-    .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
+    .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: .67rem; font-weight: 500; letter-spacing: .55em; text-transform: uppercase; color: var(--grey); margin-bottom: .7rem; display: flex; align-items: center; gap: .8rem; }
+    .eyebrow::before { content: ''; display: block; width: 1.4rem; height: 1px; background: var(--mid); }
+    .stitle { font-family: 'Cinzel', sans-serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; letter-spacing: .1em; line-height: 1; margin-bottom: 1.4rem; }
+    .sbody { font-size: .97rem; font-weight: 300; line-height: 1.9; color: var(--grey); max-width: 540px; }
+    .rule { width: 3rem; height: 1px; background: var(--white); margin-bottom: 2rem; }
+    .rv { opacity: 0; transform: translateY(20px); transition: opacity .75s, transform .75s; }
     .rv.on { opacity: 1; transform: none; }
 
-    /* ANNOUNCE */
-    #announce { background: var(--dark); padding: 0; }
-    .announce-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
-    .announce-left {
-      background: var(--red); padding: 4rem 3.5rem;
-      display: flex; flex-direction: column; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .announce-left::after {
-      content: '!'; position: absolute; bottom: -1rem; right: -1rem;
-      font-family: 'Black Han Sans', sans-serif; font-size: 14rem; line-height: 1;
-      color: rgba(0,0,0,.12); pointer-events: none;
-    }
-    .announce-left .eyebrow { color: rgba(255,255,255,.6); }
-    .announce-left .stitle { color: var(--white); margin-bottom: .8rem; }
-    .announce-left p { font-size: 1rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,.7); max-width: 380px; }
-    .announce-right { background: var(--card); padding: 4rem 3.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--line); }
-    .notify-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.2rem; }
-    .notify-form input { background: var(--ink); border: 1px solid var(--muted); color: var(--white); padding: .9rem 1.2rem; font-family: 'Barlow', sans-serif; font-size: .9rem; font-weight: 300; outline: none; transition: border-color .2s; width: 100%; }
-    .notify-form input::placeholder { color: var(--muted); }
-    .notify-form input:focus { border-color: var(--gold); }
-    .notify-btn { font-family: 'Teko', sans-serif; font-size: .95rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; background: var(--white); color: var(--black); border: none; padding: .95rem; cursor: pointer; clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition: background .2s; }
-    .notify-btn:hover { background: var(--gold); }
-    .notify-note { font-size: .75rem; font-weight: 300; color: var(--muted); }
+    /* ═══════════ ABOUT ═══════════ */
+    #about { background: var(--off-black); border-top: 1px solid var(--line); }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; margin-top: 4rem; }
+    .about-text .sbody { margin-bottom: 1.1rem; }
+    .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 3rem; background: var(--line); }
+    .pillar { background: var(--card); padding: 1.7rem 1.5rem; transition: background .2s; }
+    .pillar:hover { background: var(--ink); }
+    .pillar-n { font-family: 'Cinzel', sans-serif; font-size: 1.9rem; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: .35rem; }
+    .pillar-l { font-family: 'Barlow Condensed', sans-serif; font-size: .68rem; font-weight: 500; letter-spacing: .35em; text-transform: uppercase; color: var(--grey); }
+    .about-badge-wrap { display: flex; align-items: center; justify-content: center; position: relative; }
+    .about-ring { position: absolute; border-radius: 50%; border: 1px solid var(--line); }
+    .ar-1 { width: 400px; height: 400px; }
+    .ar-2 { width: 310px; height: 310px; border-color: rgba(255,255,255,.05); }
+    .about-badge-img { width: 250px; height: 250px; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 0 30px rgba(255,255,255,.05)); }
 
-    /* ABOUT */
-    #about { background: var(--black); }
-    .about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 6rem; align-items: center; margin-top: 4rem; }
-    .about-text .sbody { margin-bottom: 1.2rem; }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; margin-top: 2.8rem; background: var(--line); border: 1px solid var(--line); }
-    .astat { background: var(--card); padding: 1.8rem 1.5rem; }
-    .astat-n { font-family: 'Black Han Sans', sans-serif; font-size: 2.6rem; letter-spacing: .04em; color: var(--red); line-height: 1; margin-bottom: .3rem; }
-    .astat-l { font-family: 'Teko', sans-serif; font-size: .78rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--ash); }
-    .about-poster { position: relative; aspect-ratio: 3/4; }
-    .poster-frame { position: absolute; inset: 0; background: var(--card); border: 1px solid var(--line); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .poster-stripe { position: absolute; inset: 0; background: repeating-linear-gradient(-50deg, transparent, transparent 24px, rgba(217,4,41,.045) 24px, rgba(217,4,41,.045) 25px); }
-    .poster-top-bar { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--red) 60%, var(--gold)); }
-    .poster-center { position: relative; z-index: 2; text-align: center; }
-    .poster-logo-big { font-family: 'Black Han Sans', sans-serif; font-size: 3.2rem; letter-spacing: .08em; line-height: 1; display: block; margin-bottom: .4rem; }
-    .poster-logo-big em { color: var(--red); font-style: normal; }
-    .poster-tagline { font-family: 'Teko', sans-serif; font-size: .7rem; font-weight: 300; letter-spacing: .55em; text-transform: uppercase; color: var(--ash); margin-bottom: 2.5rem; }
-    .poster-vs { font-family: 'Black Han Sans', sans-serif; font-size: 7rem; color: transparent; -webkit-text-stroke: 2px rgba(217,4,41,.3); line-height: 1; }
-    .poster-coming { margin-top: 1.5rem; font-family: 'Teko', sans-serif; font-size: .72rem; font-weight: 500; letter-spacing: .4em; text-transform: uppercase; padding: .4rem 1.2rem; background: var(--red); color: rgba(255,255,255,.85); display: inline-block; }
-    .poster-corner { position: absolute; font-family: 'Teko', sans-serif; font-size: .6rem; letter-spacing: .35em; text-transform: uppercase; color: var(--muted); }
-    .pc-tl { top: 1.2rem; left: 1.4rem; }
-    .pc-br { bottom: 1.2rem; right: 1.4rem; color: var(--gold); }
-
-    /* HOW IT WORKS */
-    #how { background: var(--dark); }
+    /* ═══════════ HOW IT WORKS ═══════════ */
+    #how { background: var(--dark); border-top: 1px solid var(--line); }
     .how-header { margin-bottom: 5rem; }
-    .how-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--line); }
+    .how-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
     .track { background: var(--card); padding: 3.5rem 3rem; }
-    .track-badge { display: inline-block; font-family: 'Teko', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .35em; text-transform: uppercase; padding: .3rem .9rem; margin-bottom: 1.8rem; clip-path: polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%); }
-    .fans-badge { background: rgba(217,4,41,.15); color: var(--red); }
-    .fight-badge { background: rgba(234,169,0,.15); color: var(--gold); }
-    .track-title { font-family: 'Black Han Sans', sans-serif; font-size: 2.2rem; letter-spacing: .05em; line-height: .95; margin-bottom: 1rem; }
-    .track-body { font-size: .93rem; font-weight: 300; line-height: 1.8; color: var(--ash); margin-bottom: 2.2rem; }
-    .track-steps { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem; }
+    .track-label { font-family: 'Barlow Condensed', sans-serif; font-size: .66rem; font-weight: 600; letter-spacing: .45em; text-transform: uppercase; padding: .28rem .9rem; display: inline-block; margin-bottom: 1.8rem; border: 1px solid var(--mid); color: var(--grey); }
+    .track-title { font-family: 'Cinzel', sans-serif; font-size: 1.9rem; font-weight: 900; letter-spacing: .08em; line-height: 1; margin-bottom: 1rem; }
+    .track-body { font-size: .92rem; font-weight: 300; line-height: 1.8; color: var(--grey); margin-bottom: 2.2rem; }
+    .track-steps { display: flex; flex-direction: column; gap: 1.3rem; }
     .tstep { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .tstep-num { flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-family: 'Teko', sans-serif; font-size: .95rem; font-weight: 600; letter-spacing: .05em; }
-    .fans-num { background: rgba(217,4,41,.12); color: var(--red); border: 1px solid rgba(217,4,41,.25); }
-    .fight-num { background: rgba(234,169,0,.1); color: var(--gold); border: 1px solid rgba(234,169,0,.2); }
-    .tstep-text { font-size: .88rem; font-weight: 300; line-height: 1.65; color: var(--ash); padding-top: .3rem; }
+    .tstep-n { flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--mid); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', sans-serif; font-size: .72rem; font-weight: 700; color: var(--grey); }
+    .tstep-text { font-size: .88rem; font-weight: 300; line-height: 1.65; color: var(--grey); padding-top: .2rem; }
     .tstep-text strong { color: var(--white); font-weight: 500; }
-    .track-cta { font-family: 'Teko', sans-serif; font-size: .9rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; padding: .85rem 2rem; display: inline-block; transition: background .2s, color .2s; clip-path: polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%); }
-    .fans-cta { background: var(--red); color: var(--white); }
-    .fans-cta:hover { background: var(--red2); }
-    .fight-cta { background: transparent; color: var(--gold); border: 1px solid rgba(234,169,0,.4); clip-path: none; }
-    .fight-cta:hover { background: rgba(234,169,0,.1); }
 
-    /* WHY */
-    #why { background: var(--black); text-align: center; }
-    .why-header { max-width: 640px; margin: 0 auto 5rem; }
-    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--line); max-width: 1100px; margin: 0 auto; }
-    .why-card { background: var(--card); padding: 2.8rem 2.2rem; text-align: left; position: relative; overflow: hidden; transition: background .2s; }
+    /* ═══════════ WHY ═══════════ */
+    #why { background: var(--black); border-top: 1px solid var(--line); }
+    .why-header { margin-bottom: 4.5rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); }
+    .why-card { background: var(--card); padding: 2.8rem 2rem; position: relative; transition: background .2s; }
+    .why-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: transparent; transition: background .3s; }
     .why-card:hover { background: var(--ink); }
-    .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
-    .why-card:hover::before { transform: scaleX(1); }
-    .why-icon { font-size: 2rem; margin-bottom: 1rem; filter: grayscale(1) brightness(.7); transition: filter .2s; }
-    .why-card:hover .why-icon { filter: none; }
-    .why-name { font-family: 'Teko', sans-serif; font-size: 1.3rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .7rem; }
-    .why-desc { font-size: .88rem; font-weight: 300; line-height: 1.7; color: var(--ash); }
+    .why-card:hover::after { background: var(--white); }
+    .why-num { font-family: 'Cinzel', sans-serif; font-size: 2.8rem; font-weight: 900; color: rgba(255,255,255,.06); line-height: 1; margin-bottom: .8rem; user-select: none; }
+    .why-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .7rem; }
+    .why-desc { font-size: .87rem; font-weight: 300; line-height: 1.75; color: var(--grey); }
 
-    /* PRESENTED BY */
-    #presented { background: var(--dark); padding: 5rem 2.5rem; }
-    .presented-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1000px; margin: 0 auto; }
-    .presented-logo-block { display: flex; flex-direction: column; border-left: 3px solid var(--red); padding-left: 2rem; }
-    .presented-by { font-family: 'Teko', sans-serif; font-size: .68rem; font-weight: 400; letter-spacing: .55em; text-transform: uppercase; color: var(--ash); margin-bottom: .8rem; }
-    .presented-name { font-family: 'Black Han Sans', sans-serif; font-size: 2rem; letter-spacing: .06em; line-height: 1.05; margin-bottom: .5rem; }
-    .presented-url { font-family: 'Teko', sans-serif; font-size: .85rem; font-weight: 400; letter-spacing: .2em; color: var(--red); text-decoration: none; transition: color .2s; }
-    .presented-url:hover { color: var(--gold); }
-    .presented-text { font-size: .95rem; font-weight: 300; line-height: 1.8; color: var(--ash); }
-    .presented-text strong { color: var(--white); font-weight: 500; }
+    /* ═══════════ PRESENTED BY ═══════════ */
+    #presented { background: var(--off-black); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 6rem 2.5rem; }
+    .presented-inner { display: grid; grid-template-columns: auto 1fr; gap: 5rem; align-items: center; max-width: 860px; margin: 0 auto; }
+    .presented-logo { width: 130px; height: 130px; object-fit: contain; opacity: .85; }
+    .presented-name { font-family: 'Cinzel', sans-serif; font-size: 1.7rem; font-weight: 900; letter-spacing: .1em; margin-bottom: 1rem; }
+    .presented-desc { font-size: .93rem; font-weight: 300; line-height: 1.85; color: var(--grey); }
+    .presented-desc strong { color: var(--white); font-weight: 500; }
 
-    /* SOCIAL */
-    #social { background: var(--black); padding: 5rem 2.5rem; text-align: center; }
-    .social-row { display: flex; justify-content: center; gap: 1.5px; margin-top: 2.5rem; }
-    .soc-card { flex: 1; max-width: 240px; background: var(--card); border: 1px solid var(--line); padding: 2rem 1.5rem; text-decoration: none; transition: background .2s, border-color .2s; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
-    .soc-card:hover { background: var(--ink); border-color: var(--red); }
-    .soc-icon { font-size: 1.8rem; }
-    .soc-name { font-family: 'Teko', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--white); }
-    .soc-handle { font-size: .8rem; font-weight: 300; color: var(--ash); }
+    /* ═══════════ FOOTER ═══════════ */
+    footer { background: #000; border-top: 1px solid var(--line); padding: 3rem 2.5rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-logo { display: flex; align-items: center; gap: 1rem; }
+    .footer-logo img { width: 52px; height: 52px; object-fit: contain; opacity: .7; }
+    .footer-name { font-family: 'Cinzel', sans-serif; font-size: .9rem; font-weight: 700; letter-spacing: .15em; }
+    .footer-sub { font-family: 'Barlow Condensed', sans-serif; font-size: .62rem; font-weight: 300; letter-spacing: .4em; text-transform: uppercase; color: var(--mid); margin-top: .2rem; }
+    .footer-copy { font-size: .75rem; font-weight: 300; color: var(--mid); letter-spacing: .05em; }
 
-    /* FOOTER */
-    footer { background: #030303; border-top: 1px solid var(--line); padding: 3.5rem 2.5rem 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand .logo-main { font-family: 'Black Han Sans', sans-serif; font-size: 1.5rem; letter-spacing: .07em; }
-    .footer-brand .logo-main span { color: var(--red); }
-    .footer-brand p { font-size: .83rem; font-weight: 300; line-height: 1.7; color: var(--muted); margin-top: .7rem; max-width: 260px; }
-    .footer-brand a { display: inline-block; margin-top: .6rem; font-family: 'Teko', sans-serif; font-size: .8rem; letter-spacing: .25em; color: var(--red); text-decoration: none; transition: color .2s; }
-    .footer-brand a:hover { color: var(--gold); }
-    .footer-col h5 { font-family: 'Teko', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .45em; text-transform: uppercase; color: var(--ash); margin-bottom: 1.1rem; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
-    .footer-col a { font-size: .85rem; font-weight: 300; color: var(--muted); text-decoration: none; transition: color .2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: .75rem; color: var(--muted); flex-wrap: wrap; gap: .5rem; }
-    .footer-bottom a { color: var(--red); text-decoration: none; }
+    /* ═══════════ KEYFRAMES ═══════════ */
+    @keyframes fadeScale { from{opacity:0;transform:scale(.92);} to{opacity:1;transform:scale(1);} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
 
-    @keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* RESPONSIVE */
+    /* ═══════════ RESPONSIVE ═══════════ */
     @media (max-width: 960px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
+      .nav-tag { display: none; }
       section { padding: 5rem 1.5rem; }
-      .announce-inner { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .about-poster { display: none; }
+      .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .about-badge-wrap { display: none; }
       .how-tracks { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr 1fr; }
-      .presented-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .hero-cta { flex-direction: column; max-width: 400px; }
-      .cta-half.fans, .cta-half.fighters { clip-path: none; }
+      .presented-inner { grid-template-columns: 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
       .why-grid { grid-template-columns: 1fr; }
-      .social-row { flex-direction: column; align-items: center; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .about-pillars { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="logo" href="#">
-    <span class="logo-main">SHOWCASE <span>MT</span></span>
-    <span class="logo-sub">Muay Thai Promotion · Connecticut</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#announce">Next Event</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#how">Fans & Fighters</a></li>
-    <li><a href="#presented">Presented By</a></li>
-  </ul>
-  <div class="nav-right">
-    <a class="nav-btn ghost" href="#how">Compete</a>
-    <a class="nav-btn solid" href="#announce">Get Notified</a>
+  <div class="nav-logo">
+    <img src="showcase.jpg" alt="Showcase Muay Thai">
+    <div class="nav-logo-text">
+      <span class="nav-logo-top">SHOWCASE MUAY THAI</span>
+      <span class="nav-logo-bot">Fight Promotion · Connecticut · Est. 2026</span>
+    </div>
   </div>
+  <ul class="nav-links">
+    <li><a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a></li>
+    <li><a onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Fans & Fighters</a></li>
+    <li><a onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Showcase</a></li>
+    <li><a onclick="document.getElementById('presented').scrollIntoView({behavior:'smooth'})">Presented By</a></li>
+  </ul>
+  <div class="nav-tag">Est. 2026 · Connecticut</div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hbg"></div>
-  <div class="hmesh"></div>
-  <div class="hmask"></div>
-  <div class="hero-ghost">SHOWCASE</div>
+  <div class="hero-rings">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
+  </div>
+  <div class="hero-vignette"></div>
 
-    <h1 class="hero-h1">SHOWCASE<br><span class="r">MUAY</span><br>THAI</h1>
-    <p class="hero-deck">The Art of Eight Limbs — Coming to Connecticut</p>
-
-    <div class="hero-cta">
-      <a class="cta-half fans" href="#announce">
-        <span class="cta-eyebrow">For Fans</span>
-        <span class="cta-label">GET NOTIFIED</span>
-        <span class="cta-sub">Be first to know when tickets drop</span>
-      </a>
-      <a class="cta-half fighters" href="#how">
-        <span class="cta-eyebrow">For Fighters</span>
-        <span class="cta-label">COMPETE</span>
-        <span class="cta-sub">Submit your fighter inquiry today</span>
-      </a>
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <img src="showcase.jpg" alt="Showcase Muay Thai">
     </div>
 
+    <p class="hero-eyebrow">Connecticut's Newest Fight Promotion</p>
+
+    <h1 class="hero-title">
+      SHOWCASE MUAY THAI
+      <span class="line2">The Art of Eight Limbs</span>
+    </h1>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="hero-sub">Authentic &nbsp;·&nbsp; Sanctioned &nbsp;·&nbsp; Connecticut</p>
+
     <p class="hero-coming">
-      <span class="pulse-dot"></span>
+      <span class="live-dot"></span>
       First Event Date Announcing Soon
     </p>
   </div>
@@ -353,79 +286,51 @@
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
-  <div class="ticker-inner">
-    <span>Showcase Muay Thai</span><span class="sep">◆</span>
-    <span>Connecticut</span><span class="sep">◆</span>
-    <span>Presented by Campanella Martial Arts</span><span class="sep">◆</span>
-    <span>Amateur &amp; Pro Bouts</span><span class="sep">◆</span>
-    <span>The Art of Eight Limbs</span><span class="sep">◆</span>
-    <span>First Event Coming Soon</span><span class="sep">◆</span>
-    <span>Fighters Welcome — All Gyms</span><span class="sep">◆</span>
-    <span>Sanctioned Competition</span><span class="sep">◆</span>
-    <span>Showcase Muay Thai</span><span class="sep">◆</span>
-    <span>Connecticut</span><span class="sep">◆</span>
-    <span>Presented by Campanella Martial Arts</span><span class="sep">◆</span>
-    <span>Amateur &amp; Pro Bouts</span><span class="sep">◆</span>
-    <span>The Art of Eight Limbs</span><span class="sep">◆</span>
-    <span>First Event Coming Soon</span><span class="sep">◆</span>
-    <span>Fighters Welcome — All Gyms</span><span class="sep">◆</span>
-    <span>Sanctioned Competition</span><span class="sep">◆</span>
+  <div class="ticker-track">
+    <span>Showcase Muay Thai</span><span class="dia">◆</span>
+    <span>Connecticut</span><span class="dia">◆</span>
+    <span>Est. 2026</span><span class="dia">◆</span>
+    <span>Presented by Campanella Martial Arts</span><span class="dia">◆</span>
+    <span>Amateur &amp; Pro Bouts</span><span class="dia">◆</span>
+    <span>The Art of Eight Limbs</span><span class="dia">◆</span>
+    <span>First Event Coming Soon</span><span class="dia">◆</span>
+    <span>All Gyms Welcome</span><span class="dia">◆</span>
+    <span>Sanctioned Competition</span><span class="dia">◆</span>
+    <span>Showcase Muay Thai</span><span class="dia">◆</span>
+    <span>Connecticut</span><span class="dia">◆</span>
+    <span>Est. 2026</span><span class="dia">◆</span>
+    <span>Presented by Campanella Martial Arts</span><span class="dia">◆</span>
+    <span>Amateur &amp; Pro Bouts</span><span class="dia">◆</span>
+    <span>The Art of Eight Limbs</span><span class="dia">◆</span>
+    <span>First Event Coming Soon</span><span class="dia">◆</span>
+    <span>All Gyms Welcome</span><span class="dia">◆</span>
+    <span>Sanctioned Competition</span><span class="dia">◆</span>
   </div>
 </div>
-
-<!-- ANNOUNCE / NOTIFY -->
-<section id="announce">
-  <div class="announce-inner rv">
-    <div class="announce-left">
-      <p class="eyebrow">First Event</p>
-      <h2 class="stitle">DATE<br>DROPPING<br>SOON.</h2>
-      <p>Showcase Muay Thai is gearing up for its inaugural event in Connecticut. Sign up to be the first to know when the date, venue, and fight card are announced.</p>
-    </div>
-    <div class="announce-right">
-      <p class="eyebrow">Stay in the Loop</p>
-      <h3 style="font-family:'Black Han Sans',sans-serif;font-size:2rem;letter-spacing:.05em;margin-bottom:.6rem;">GET NOTIFIED</h3>
-      <p style="font-size:.88rem;font-weight:300;color:var(--ash);line-height:1.7;">Drop your email and we'll hit you the moment tickets go live, fights are announced, and event details drop.</p>
-      <div class="notify-form">
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Email Address" />
-        <button class="notify-btn" onclick="this.textContent='✓ You\'re on the list!'; this.style.background='#EAA900'; this.style.color='#050505';">Notify Me</button>
-        <p class="notify-note">No spam. Only fight announcements. Unsubscribe anytime.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="rv">
     <p class="eyebrow">The Promotion</p>
+    <div class="rule"></div>
     <h2 class="stitle">BUILT TO<br>SHOWCASE<br>THE SPORT.</h2>
   </div>
-  <div class="about-grid rv">
+  <div class="about-layout rv">
     <div class="about-text">
-      <p class="sbody">Showcase Muay Thai is a new fight promotion dedicated to putting on real, competitive, sanctioned Muay Thai events across Connecticut. We're here to give fighters a stage and fans an experience.</p>
-      <p class="sbody" style="margin-top:1rem;">This isn't backyard fighting — it's authentic Muay Thai with licensed officials, proper matchmaking, medical staff on site, and a fight night atmosphere that respects both the sport and the athletes.</p>
-      <p class="sbody" style="margin-top:1rem;">We welcome fighters from all gyms across New England. If your athlete is ready to compete, we want to hear from you.</p>
-      <div class="about-stats">
-        <div class="astat"><div class="astat-n">CT</div><div class="astat-l">Home Base</div></div>
-        <div class="astat"><div class="astat-n">ALL</div><div class="astat-l">Levels Welcome</div></div>
-        <div class="astat"><div class="astat-n">✓</div><div class="astat-l">Sanctioned Events</div></div>
-        <div class="astat"><div class="astat-n">NE</div><div class="astat-l">Regional Reach</div></div>
+      <p class="sbody">Showcase Muay Thai is a new fight promotion dedicated to real, competitive, sanctioned Muay Thai events across Connecticut. We're here to give fighters a stage and fans an unforgettable night.</p>
+      <p class="sbody" style="margin-top:1.1rem;">This is authentic Muay Thai — licensed officials, proper matchmaking, medical staff on site, and a fight night atmosphere that respects the sport and the athletes who compete in it.</p>
+      <p class="sbody" style="margin-top:1.1rem;">Fighters from all gyms across New England are welcome. If your athlete is ready to compete, we want to hear from you.</p>
+      <div class="about-pillars">
+        <div class="pillar"><div class="pillar-n">CT</div><div class="pillar-l">Home Base</div></div>
+        <div class="pillar"><div class="pillar-n">ALL</div><div class="pillar-l">Levels Welcome</div></div>
+        <div class="pillar"><div class="pillar-n">✓</div><div class="pillar-l">Sanctioned</div></div>
+        <div class="pillar"><div class="pillar-n">NE</div><div class="pillar-l">Regional Reach</div></div>
       </div>
     </div>
-    <div class="about-poster">
-      <div class="poster-frame">
-        <div class="poster-stripe"></div>
-        <div class="poster-top-bar"></div>
-        <span class="poster-corner pc-tl">Connecticut</span>
-        <span class="poster-corner pc-br">Inaugural Event</span>
-        <div class="poster-center">
-          <span class="poster-logo-big">SHOWCASE <em>MT</em></span>
-          <p class="poster-tagline">Muay Thai Promotion</p>
-          <div class="poster-vs">VS</div>
-          <div class="poster-coming">Date TBA — Stay Tuned</div>
-        </div>
-      </div>
+    <div class="about-badge-wrap">
+      <div class="about-ring ar-1"></div>
+      <div class="about-ring ar-2"></div>
+      <img class="about-badge-img" src="showcase.jpg" alt="Showcase Muay Thai">
     </div>
   </div>
 </section>
@@ -434,50 +339,48 @@
 <section id="how">
   <div class="how-header rv">
     <p class="eyebrow">How It Works</p>
-    <h2 class="stitle">FANS &<br>FIGHTERS</h2>
-    <p class="sbody">Two ways to be part of Showcase Muay Thai. Whether you're coming to watch or stepping into the ring, here's everything you need to know.</p>
+    <div class="rule"></div>
+    <h2 class="stitle">FANS &amp;<br>FIGHTERS</h2>
+    <p class="sbody">Two ways to be part of Showcase Muay Thai — whether you're buying a ticket or stepping into the ring.</p>
   </div>
   <div class="how-tracks rv">
     <div class="track">
-      <span class="track-badge fans-badge">For Fans</span>
+      <span class="track-label">For Fans</span>
       <h3 class="track-title">COME<br>WATCH.</h3>
-      <p class="track-body">Showcase events are open to the public. We put on a real fight night — multiple bouts, live commentary, a charged atmosphere, and authentic Muay Thai competition from novice to pro.</p>
+      <p class="track-body">Showcase events are open to the public — multiple bouts, live commentary, and authentic Muay Thai competition from novice to pro. A real fight night.</p>
       <div class="track-steps">
         <div class="tstep">
-          <div class="tstep-num fans-num">1</div>
-          <p class="tstep-text"><strong>Sign up for notifications.</strong> We'll email you the moment the event date and venue are confirmed.</p>
+          <div class="tstep-n">I</div>
+          <p class="tstep-text"><strong>Watch for announcements.</strong> Event date and venue will be announced across our social media channels.</p>
         </div>
         <div class="tstep">
-          <div class="tstep-num fans-num">2</div>
-          <p class="tstep-text"><strong>Tickets go live.</strong> Grab yours early — general admission and reserved seating will be available.</p>
+          <div class="tstep-n">II</div>
+          <p class="tstep-text"><strong>Get your tickets.</strong> General admission and reserved seating available when the event is announced.</p>
         </div>
         <div class="tstep">
-          <div class="tstep-num fans-num">3</div>
+          <div class="tstep-n">III</div>
           <p class="tstep-text"><strong>Show up and watch.</strong> Doors open one hour before the first bout. Full card posted in advance.</p>
         </div>
       </div>
-      <a class="track-cta fans-cta" href="#announce">Get Notified</a>
     </div>
-
     <div class="track">
-      <span class="track-badge fight-badge">For Fighters</span>
+      <span class="track-label">For Fighters</span>
       <h3 class="track-title">STEP UP<br>AND FIGHT.</h3>
-      <p class="track-body">We're actively building our inaugural fight card. Novice, amateur, and professional fighters are all welcome. We work directly with coaches and gyms to build fair, competitive matchups.</p>
+      <p class="track-body">We're building our inaugural fight card now. Novice, amateur, and pro fighters all welcome. We work with coaches and gyms to create fair, competitive matchups.</p>
       <div class="track-steps">
         <div class="tstep">
-          <div class="tstep-num fight-num">1</div>
-          <p class="tstep-text"><strong>Submit an inquiry.</strong> Tell us your fighter's weight class, experience level, and availability. All gyms welcome.</p>
+          <div class="tstep-n">I</div>
+          <p class="tstep-text"><strong>Reach out through your gym.</strong> Coaches can connect with us directly to discuss available bouts.</p>
         </div>
         <div class="tstep">
-          <div class="tstep-num fight-num">2</div>
-          <p class="tstep-text"><strong>Matchmaking.</strong> We find a competitive, appropriate opponent. Fighter safety and fairness come first.</p>
+          <div class="tstep-n">II</div>
+          <p class="tstep-text"><strong>Matchmaking.</strong> We find a fair, competitive opponent. Fighter safety and fairness come first.</p>
         </div>
         <div class="tstep">
-          <div class="tstep-num fight-num">3</div>
-          <p class="tstep-text"><strong>Confirmation & fight night.</strong> Get your contract, weigh-in details, and compete on a real promoted card.</p>
+          <div class="tstep-n">III</div>
+          <p class="tstep-text"><strong>Fight night.</strong> Receive your contract and weigh-in details. Compete on a real promoted card.</p>
         </div>
       </div>
-      <a class="track-cta fight-cta" href="mailto:fights@showcasemuaythai.com">Submit Fighter Inquiry →</a>
     </div>
   </div>
 </section>
@@ -486,78 +389,66 @@
 <section id="why">
   <div class="why-header rv">
     <p class="eyebrow">What We Stand For</p>
-    <h2 class="stitle">WHY<br>SHOWCASE</h2>
+    <div class="rule"></div>
+    <h2 class="stitle">WHY SHOWCASE</h2>
   </div>
   <div class="why-grid rv">
-    <div class="why-card"><div class="why-icon">🥊</div><div class="why-name">Authentic Muay Thai</div><p class="why-desc">We run traditional-rules Muay Thai — elbows, knees, clinch and all. This isn't kickboxing. The full art is on display.</p></div>
-    <div class="why-card"><div class="why-icon">⚖️</div><div class="why-name">Fair Matchmaking</div><p class="why-desc">Every bout is carefully matched by experience, record, and weight. Competitive fights that push both athletes.</p></div>
-    <div class="why-card"><div class="why-icon">🏥</div><div class="why-name">Safety First</div><p class="why-desc">Licensed officials, medical staff on site, and sanctioned oversight. Fighter safety is non-negotiable.</p></div>
-    <div class="why-card"><div class="why-icon">🌎</div><div class="why-name">Open to All Gyms</div><p class="why-desc">We don't play favorites. Fighters from any gym across New England are welcome to compete on a Showcase card.</p></div>
-    <div class="why-card"><div class="why-icon">📣</div><div class="why-name">Real Promotion</div><p class="why-desc">Live commentary, event photography, social media coverage, and a fight-night atmosphere that treats athletes like pros.</p></div>
-    <div class="why-card"><div class="why-icon">📈</div><div class="why-name">Grow the Sport</div><p class="why-desc">Connecticut deserves a dedicated Muay Thai promotion. We're here to build it from the ground up — event by event.</p></div>
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-name">Authentic Muay Thai</div>
+      <p class="why-desc">Traditional rules — elbows, knees, clinch. The full art, not a watered-down version of it.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-name">Fair Matchmaking</div>
+      <p class="why-desc">Every bout matched by experience, record, and weight. Competitive fights that respect both athletes.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-name">Safety First</div>
+      <p class="why-desc">Licensed officials, medical staff on site, and sanctioned oversight at every event.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <div class="why-name">Open to All Gyms</div>
+      <p class="why-desc">No house fighters. Competitors from any gym across New England are welcome on our cards.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">05</div>
+      <div class="why-name">Real Promotion</div>
+      <p class="why-desc">Live commentary, photography, social coverage. Athletes are treated like professionals.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">06</div>
+      <div class="why-name">Grow the Sport</div>
+      <p class="why-desc">Connecticut deserves its own Muay Thai promotion. We're building it from the ground up.</p>
+    </div>
   </div>
 </section>
 
 <!-- PRESENTED BY -->
 <section id="presented">
   <div class="presented-inner rv">
-    <div class="presented-logo-block">
-      <span class="presented-by">Presented By</span>
-      <div class="presented-name">Campanella<br>Martial Arts</div>
-      <a class="presented-url" href="https://www.campanellamartialarts.com" target="_blank" rel="noopener">campanellamartialarts.com ↗</a>
+    <img class="presented-logo" src="showcase.jpg" alt="Showcase Muay Thai">
+    <div>
+      <p class="eyebrow">Presented By</p>
+      <div class="presented-name">Campanella Martial Arts</div>
+      <p class="presented-desc">Showcase Muay Thai is produced by <strong>Campanella Martial Arts</strong>, a Connecticut-based gym with deep roots in Muay Thai training and competition. The coaches who train fighters every day are the same people running this promotion — because they know exactly what the sport needs.</p>
     </div>
-    <p class="presented-text">Showcase Muay Thai is produced by <strong>Campanella Martial Arts</strong>, a Connecticut-based gym with deep roots in Muay Thai training and competition. The same coaches who train fighters day in and day out are the ones putting on this promotion — because they know what fighters and fans actually need from a fight event.</p>
-  </div>
-</section>
-
-<!-- SOCIAL -->
-<section id="social">
-  <p class="eyebrow rv">Follow Along</p>
-  <h2 class="stitle rv">STAY<br>CONNECTED</h2>
-  <p class="sbody rv" style="margin:0 auto 0;max-width:480px;text-align:center;">Follow Showcase Muay Thai for fight announcements, event updates, fighter spotlights, and behind-the-scenes content.</p>
-  <div class="social-row rv">
-    <a class="soc-card" href="#"><span class="soc-icon">📸</span><span class="soc-name">Instagram</span><span class="soc-handle">@showcasemuaythai</span></a>
-    <a class="soc-card" href="#"><span class="soc-icon">👍</span><span class="soc-name">Facebook</span><span class="soc-handle">Showcase Muay Thai</span></a>
-    <a class="soc-card" href="#"><span class="soc-icon">▶️</span><span class="soc-name">YouTube</span><span class="soc-handle">Showcase MT</span></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo-main">SHOWCASE <span>MT</span></div>
-      <p>Connecticut's newest Muay Thai fight promotion. Presented by Campanella Martial Arts. Authentic. Sanctioned. Competitive.</p>
-      <a href="https://www.campanellamartialarts.com" target="_blank" rel="noopener">campanellamartialarts.com ↗</a>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="showcase.jpg" alt="Showcase Muay Thai">
+      <div>
+        <div class="footer-name">SHOWCASE MUAY THAI</div>
+        <div class="footer-sub">Connecticut · Est. 2026</div>
+      </div>
     </div>
-    <div class="footer-col">
-      <h5>Fans</h5>
-      <ul>
-        <li><a href="#announce">Get Notified</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#why">About the Promotion</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Fighters</h5>
-      <ul>
-        <li><a href="#how">How to Compete</a></li>
-        <li><a href="mailto:fights@showcasemuaythai.com">Submit Inquiry</a></li>
-        <li><a href="https://www.campanellamartialarts.com" target="_blank" rel="noopener">Train at CMA</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <ul>
-        <li><a href="mailto:info@showcasemuaythai.com">General Inquiries</a></li>
-        <li><a href="mailto:fights@showcasemuaythai.com">Fighter Bookings</a></li>
-        <li><a href="mailto:sponsors@showcasemuaythai.com">Sponsorship</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Showcase Muay Thai — Presented by Campanella Martial Arts, Connecticut</span>
-    <a href="https://www.campanellamartialarts.com" target="_blank" rel="noopener">campanellamartialarts.com</a>
+    <p class="footer-copy">© 2026 Showcase Muay Thai — Presented by Campanella Martial Arts</p>
   </div>
 </footer>
 
@@ -566,9 +457,8 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.rv').forEach(el => obs.observe(el));
-
-  document.querySelectorAll('.why-grid, .social-row, .about-stats, .how-tracks').forEach(g => {
-    [...g.children].forEach((c, i) => { c.style.transitionDelay = `${i * 0.09}s`; });
+  document.querySelectorAll('.why-grid, .about-pillars, .how-tracks').forEach(g => {
+    [...g.children].forEach((c,i) => { c.style.transitionDelay = `${i*.08}s`; });
   });
 </script>
 </body>
