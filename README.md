@@ -28,7 +28,7 @@ The landing page is built entirely with fundamental web technologies for high pe
 
 To view or edit the site locally:
 1. Clone this repository to your local machine.
-2. Open `showcase-muaythai.html` in your web browser. No build steps or local server required!
+2. Open `index.html` in your web browser. No build steps or local server required!
 
 ## Presented By
 
