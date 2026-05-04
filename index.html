@@ -89,7 +89,8 @@
     }
     .hmask { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, var(--black) 100%); }
     .hero-ghost {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%);
+      text-align: center; padding-left: .04em; /* offset for letter-spacing */
       font-family: 'Black Han Sans', sans-serif; font-size: clamp(8rem, 22vw, 20rem);
       white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(217,4,41,.1);
       user-select: none; pointer-events: none; letter-spacing: .04em;
@@ -105,7 +106,7 @@
     .hero-h1 {
       font-family: 'Black Han Sans', sans-serif;
       font-size: clamp(4.5rem, 16vw, 14rem); line-height: .88; letter-spacing: .04em;
-      opacity: 0; animation: up .6s .22s forwards;
+      opacity: 0; animation: up .6s .22s forwards; padding-left: .04em;
     }
     .hero-h1 .r { color: var(--red); }
     .hero-deck {
