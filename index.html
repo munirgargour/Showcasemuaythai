@@ -27,7 +27,7 @@
       --white: #FFFFFF;
       --off-white: #F0EDE8;
       --cream: #D8D0C4;
-      --grey: #666;
+      --grey: #a8a8a8;
       --mid: #333;
       --line: rgba(255, 255, 255, .1);
       --line-s: rgba(255, 255, 255, .06);
@@ -439,12 +439,6 @@
       max-width: 540px;
     }
 
-    .rule {
-      width: 3rem;
-      height: 1px;
-      background: var(--white);
-      margin-bottom: 2rem;
-    }
 
     .rv {
       opacity: 0;
@@ -647,7 +641,7 @@
 
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 1px;
       background: var(--line);
     }
@@ -690,9 +684,9 @@
 
     .why-name {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
+      font-size: 1.8rem;
       font-weight: 600;
-      letter-spacing: .18em;
+      letter-spacing: .12em;
       text-transform: uppercase;
       margin-bottom: .7rem;
     }
@@ -856,9 +850,7 @@
         grid-template-columns: 1fr;
       }
 
-      .why-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+
 
       .presented-inner {
         grid-template-columns: 1fr;
@@ -867,9 +859,7 @@
     }
 
     @media (max-width: 600px) {
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
+
 
       .about-pillars {
         grid-template-columns: 1fr 1fr;
@@ -897,7 +887,7 @@
     <ul class="nav-links">
       <li><a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a></li>
       <li><a onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Fans & Fighters</a></li>
-      <li><a onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Showcase</a></li>
+      <li><a onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Skill Divisions</a></li>
       <li><a onclick="document.getElementById('presented').scrollIntoView({behavior:'smooth'})">Presented By</a></li>
     </ul>
     <div class="nav-tag">Est. 2026 · Connecticut</div>
@@ -922,7 +912,7 @@
 
       <h1 class="hero-title">
         SHOWCASE MUAY THAI
-        <span class="line2">The Art of Eight Limbs</span>
+        <span class="line2">Full Rules Muay Thai</span>
       </h1>
 
       <div class="divider">
@@ -935,7 +925,7 @@
 
       <p class="hero-coming">
         <span class="live-dot"></span>
-        First Event Date Announcing Soon
+        First Event August 1st
       </p>
     </div>
   </section>
@@ -948,8 +938,8 @@
       <span>Est. 2026</span><span class="dia">◆</span>
       <span>Presented by Campanella Martial Arts</span><span class="dia">◆</span>
       <span>Amateur &amp; Pro Bouts</span><span class="dia">◆</span>
-      <span>The Art of Eight Limbs</span><span class="dia">◆</span>
-      <span>First Event Coming Soon</span><span class="dia">◆</span>
+      <span>Full Rules Muay Thai</span><span class="dia">◆</span>
+      <span>August 1st</span><span class="dia">◆</span>
       <span>All Gyms Welcome</span><span class="dia">◆</span>
       <span>Sanctioned Competition</span><span class="dia">◆</span>
       <span>Showcase Muay Thai</span><span class="dia">◆</span>
@@ -957,8 +947,8 @@
       <span>Est. 2026</span><span class="dia">◆</span>
       <span>Presented by Campanella Martial Arts</span><span class="dia">◆</span>
       <span>Amateur &amp; Pro Bouts</span><span class="dia">◆</span>
-      <span>The Art of Eight Limbs</span><span class="dia">◆</span>
-      <span>First Event Coming Soon</span><span class="dia">◆</span>
+      <span>Full Rules Muay Thai</span><span class="dia">◆</span>
+      <span>August 1st</span><span class="dia">◆</span>
       <span>All Gyms Welcome</span><span class="dia">◆</span>
       <span>Sanctioned Competition</span><span class="dia">◆</span>
     </div>
@@ -967,8 +957,7 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="rv">
-      <p class="eyebrow">The Promotion</p>
-      <div class="rule"></div>
+
       <h2 class="stitle">BUILT TO<br>SHOWCASE<br>THE SPORT.</h2>
     </div>
     <div class="about-layout rv">
@@ -1010,8 +999,7 @@
   <!-- HOW IT WORKS -->
   <section id="how">
     <div class="how-header rv">
-      <p class="eyebrow">How It Works</p>
-      <div class="rule"></div>
+
       <h2 class="stitle">FANS &amp;<br>FIGHTERS</h2>
       <p class="sbody">Two ways to be part of Showcase Muay Thai — whether you're buying a ticket or stepping into the
         ring.</p>
@@ -1066,45 +1054,27 @@
     </div>
   </section>
 
-  <!-- WHY SHOWCASE -->
+  <!-- SKILL DIVISIONS -->
   <section id="why">
     <div class="why-header rv">
-      <p class="eyebrow">What We Stand For</p>
-      <div class="rule"></div>
-      <h2 class="stitle">WHY SHOWCASE</h2>
+      <h2 class="stitle">SKILL DIVISIONS</h2>
+      <p class="sbody">Competitors work through skill divisions to ensure safety and fairness among combatants. Fighters will start at C-Class, and work their way up as they gain experience and skill. Work your way through the ranks to compete with top combatants.</p>
     </div>
     <div class="why-grid rv">
       <div class="why-card">
-        <div class="why-num">01</div>
-        <div class="why-name">Authentic Muay Thai</div>
-        <p class="why-desc">Traditional rules — elbows, knees, clinch. The full art, not a watered-down version of it.
-        </p>
+        <div class="why-name">C-Class</div>
+        <p class="why-desc">Fighters with less than two sanctioned fights are C-Class. These fighters will wear
+          shinguards, headgear, gloves, and elbow pads.</p>
       </div>
       <div class="why-card">
-        <div class="why-num">02</div>
-        <div class="why-name">Fair Matchmaking</div>
-        <p class="why-desc">Every bout matched by experience, record, and weight. Competitive fights that respect both
-          athletes.</p>
+        <div class="why-name">B-Class</div>
+        <p class="why-desc">Fighters with more experience graduate to B-Class, removing the headgear. B-Class fighters
+          wear gloves, shinguards, and elbow pads.</p>
       </div>
       <div class="why-card">
-        <div class="why-num">03</div>
-        <div class="why-name">Safety First</div>
-        <p class="why-desc">Licensed officials, medical staff on site, and sanctioned oversight at every event.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">04</div>
-        <div class="why-name">Open to All Gyms</div>
-        <p class="why-desc">No house fighters. Competitors from any gym across New England are welcome on our cards.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">05</div>
-        <div class="why-name">Real Promotion</div>
-        <p class="why-desc">Live commentary, photography, social coverage. Athletes are treated like professionals.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">06</div>
-        <div class="why-name">Grow the Sport</div>
-        <p class="why-desc">Connecticut deserves its own Muay Thai promotion. We're building it from the ground up.</p>
+        <div class="why-name">A-Class</div>
+        <p class="why-desc">Elite competitors will graduate to A-Class, wearing just gloves and elbow pads to compete at
+          their limits for an intense Muay Thai experience.</p>
       </div>
     </div>
   </section>
@@ -1114,7 +1084,7 @@
     <div class="presented-inner rv">
       <img class="presented-logo" src="showcase.png" alt="Showcase Muay Thai">
       <div>
-        <p class="eyebrow">Presented By</p>
+
         <div class="presented-name">Campanella Martial Arts</div>
         <p class="presented-desc">Showcase Muay Thai is produced by <strong>Campanella Martial Arts</strong>, a
           Connecticut-based gym with deep roots in Muay Thai training and competition. The coaches who train fighters
