@@ -713,6 +713,13 @@
       align-items: center;
       max-width: 860px;
       margin: 0 auto;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity .2s;
+    }
+
+    .presented-inner:hover {
+      opacity: .8;
     }
 
     .presented-logo {
@@ -945,7 +952,13 @@
     }
 
     @media (max-width: 600px) {
+      .hero-title {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+      }
 
+      .hero-title .line2 {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+      }
 
       .about-pillars {
         grid-template-columns: 1fr 1fr;
@@ -1171,16 +1184,15 @@
 
   <!-- PRESENTED BY -->
   <section id="presented">
-    <div class="presented-inner rv">
-      <img class="presented-logo" src="showcase.png" alt="Showcase Muay Thai">
+    <a class="presented-inner rv" href="https://campanellamartialarts.com" target="_blank" rel="noopener">
+      <img class="presented-logo" src="cma-logo.png" alt="Campanella Martial Arts">
       <div>
-
         <div class="presented-name">Campanella Martial Arts</div>
         <p class="presented-desc">Showcase Muay Thai is produced by <strong>Campanella Martial Arts</strong>, a
           Connecticut-based gym with deep roots in Muay Thai training and competition. The coaches who train fighters
           every day are the same people running this promotion — because they know exactly what the sport needs.</p>
       </div>
-    </div>
+    </a>
   </section>
 
   <!-- FOOTER -->
